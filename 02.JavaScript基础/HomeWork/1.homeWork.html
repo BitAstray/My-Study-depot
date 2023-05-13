@@ -1,0 +1,63 @@
+<!--
+ * @Author: Astray bitcreate@qq.com
+ * @Date: 2023-02-10 14:28:52
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-02-10 15:08:04
+ * @FilePath: \Code\JavaScript基础\1.homeWork.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.计算2的n次幂
+      var n = parseInt(window.prompt("input"));
+      var m = n;
+
+      var power = 1;
+      if (n < 0) {
+        m = -n;
+      }
+      for (let i = 1; i <= m; i++) {
+        power *= 2;
+      }
+      if (n < 0) {
+        document.write("2的" + n + "次方= 1/" + power + "<br>");
+      } else {
+        document.write("2的" + n + "次方=" + power + "<br>");
+      }
+
+      //2. 阶乘
+      var factorial = 1;
+      for (let i = 1; i <= n; i++) {
+        factorial *= i;
+      }
+      if (n < 0) {
+        document.write("error!!!<br>");
+      } else {
+        document.write(n + "的阶乘=" + factorial + "<br>");
+      }
+
+      //3. 斐波拉契数列
+      var fibolacci = 1;
+
+      var a = 0,
+        b = 1;
+      for (let i = 2; i <= n; i++) {
+        fibolacci = a + b;
+        a = b;
+        b = fibolacci;
+      }
+      if (n <= 0) {
+        document.write("error!!!<br>");
+      } else {
+        document.write("第" + n + "项斐波拉契数列值为" + fibolacci + "<br>");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+div:nth-child(3) {
+  margin-top: 12px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+/*
+  选择器：
+  1. id == #name{
+  2. Class == .name{
+  3. 标签 == name{
+  4. 通配符 == *{
+  5. 属性 == []name{
+  优先级：
+  !important > 行内 > 页面 > 外部 id > class==属性 > 标签 > 通配符
+  CSS权重:   256进制数
+  !important        -infinity
+  行间样式           1000
+  ID                100
+  class|属性|伪类    10
+  标签|伪元素        1
+  通配符             0
+*/

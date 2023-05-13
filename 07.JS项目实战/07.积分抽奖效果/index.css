@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+/* 可视区域 */
+.container {
+  height: 546px;
+  background-image: url(./img/bg.jpg);
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  /* ?相对现有位置移动 */
+  transform: translate(-50%, -50%);
+
+  width: 874px;
+  height: 458px;
+  background-image: url(./img/center_bg.png);
+}
+
+.prize-list li {
+  position: absolute;
+  width: 270px;
+  height: 100px;
+  padding: 5px;
+  background-color: #622230;
+  color: #ffb100;
+  /* box-sizing: border-box; */
+}
+
+.prize-list li.active {
+  background-color: #ffb100;
+  color: #000;
+}
+
+.prize-list li:nth-child(1) {
+  top: 22px;
+  left: 26px;
+}
+.prize-list li:nth-child(2) {
+  top: 22px;
+  left: 302px;
+}
+.prize-list li:nth-child(3) {
+  top: 22px;
+  right: 26px;
+}
+
+.prize-list li:nth-child(4) {
+  width: 100px;
+  height: 200px;
+  top: 129px;
+  right: 26px;
+}
+
+.prize-list li:nth-child(8) {
+  width: 100px;
+  height: 200px;
+  top: 129px;
+  left: 26px;
+}
+
+.prize-list li:nth-child(5) {
+  bottom: 22px;
+  right: 26px;
+}
+
+.prize-list li:nth-child(6) {
+  bottom: 22px;
+  left: 302px;
+}
+.prize-list li:nth-child(7) {
+  bottom: 22px;
+  left: 26px;
+}
+
+.prize-list li > img {
+  max-height: 75px;
+  position: absolute;
+  left: 30px;
+  top: 15px;
+}
+
+.prize-list li > span {
+  font-size: 19px;
+  position: absolute;
+  left: 102px;
+  top: 36px;
+  width: 164px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.prize-list li:nth-child(4) > img,
+.prize-list li:nth-child(8) > img {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prize-list li:nth-child(4) > span,
+.prize-list li:nth-child(8) > span {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 36px;
+  top: auto;
+}
+
+/* 控制区域 */
+.controller {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 614px;
+  height: 198px;
+  background-image: url(./img/middle-bg.png);
+}
+
+.controller-left {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.controller-left > span {
+  float: right;
+  font-size: 30px;
+  color: #ffd200;
+  font-weight: bold;
+  margin: 17px 0 0 18px;
+}
+
+.lottery-btn {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* 对话框区域 */
+.masker-dialog {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: none;
+}
+
+.masker-container {
+  width: 400px;
+  background-color: #ffff;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 40px;
+}
+
+.masker-head {
+  height: 50px;
+  line-height: 50px;
+  background-color: #e99c3d;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+}
+
+.masker-head .title {
+  float: left;
+  color: #fff;
+  font-size: 18px;
+}
+
+.masker-head .close {
+  float: right;
+  color: #fff;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.masker-content {
+  text-align: center;
+  margin: 20px;
+  color: #622230;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.masker-btn {
+  background-color: #fca825;
+  height: 28px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 28px;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 3px;
+  position: absolute;
+  right: 20px;
+}

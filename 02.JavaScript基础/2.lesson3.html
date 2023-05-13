@@ -1,0 +1,60 @@
+<!--
+ * @Author: Astray bitcreate@qq.com
+ * @Date: 2023-02-10 11:35:50
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-02-10 14:18:26
+ * @FilePath: \Code\JavaScript基础\2.lesson3.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 
+        ?ASCII码
+      */
+      // var a = "a" > "b";
+      /* Nan谁都不等 */
+      var a = NaN == NaN;
+      console.log(a);
+
+      //? 逻辑运算符 && || ！
+      //? undefined, null, NaN, "", 0, false ==> false
+      //? 返回终止运算时表达式的值
+      var b = 5 && 4;
+      console.log(b);
+
+      // var score = parseInt(window.prompt("input"));
+      // if (score > 90 && score <= 100) {
+      //   console.log("alibaba");
+      // } else if (score > 80 && score <= 90) {
+      //   console.log("tencen");
+      // } else if (score > 70 && score <= 90) {
+      //   console.log("baidu");
+      // } else if (score > 60 && score <= 70) {
+      //   console.log("mogujie99");
+      // } else if (score >= 0 && score <= 60) {
+      //   console.log("Om my god,!!!you gotta be kidding me！！！");
+      // } else {
+      //   console.log("error!!");
+      // }
+
+      var a = "我很帅";
+      for (let i = 0; i < 10; i++) {
+        document.write(a, "<br>");
+      }
+      /* 
+        1. var i = 0;
+        2. if(i < 10); {
+          document.write(a, "<br>")
+        }
+        3. i++;  ==>2
+      */
+    </script>
+  </body>
+</html>

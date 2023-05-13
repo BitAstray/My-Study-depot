@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #e8eaf0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 1200px;
+  margin: 1em auto;
+}
+.menu {
+  margin: 40px 0;
+  display: flex;
+  height: 100px;
+  line-height: 50px;
+  background-color: #fff;
+  justify-content: space-between;
+  color: #666;
+}
+.title {
+  background-color: #2c88e2;
+  width: 80px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px 0 0 5px;
+}
+.types {
+  flex: 1 0 auto;
+}
+.type-list {
+  display: flex;
+  padding-left: 20px;
+  font-size: 14px;
+}
+.radio {
+  position: relative;
+  margin-right: 30px;
+  padding-left: 25px;
+  cursor: pointer;
+}
+.radio::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #868686;
+  border-radius: 50%;
+  content: "";
+}
+.radio::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transform: 0.5s;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #2c88e2;
+  border-radius: 50%;
+  content: "";
+}
+.checked::after {
+  transform: translateY(-50%) scale(1);
+}
+.search {
+  padding-right: 20px;
+}
+.input {
+  position: relative;
+  width: 300px;
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  height: 40px;
+  padding-right: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.input > input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 1em;
+  font-size: 14px;
+}
+.input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 40px;
+  height: 20px;
+  background: url(./search_icon.png) no-repeat center;
+  border-left: 1px solid #ccc;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  place-items: center;
+  text-align: center;
+  row-gap: 20px;
+  color: #333;
+}
+
+.list img {
+  display: block;
+  width: 77px;
+  height: 77px;
+  border-radius: 10px 0 10px 0;
+  border: 2px solid #2c88e2;
+  margin-bottom: 5px;
+}

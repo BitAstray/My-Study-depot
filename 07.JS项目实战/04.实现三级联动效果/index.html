@@ -1,0 +1,44 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-10 16:49:59
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-10 18:37:14
+ * @FilePath: \Code\03.JS项目实战\04.实现三级联动效果\index.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <ul class="content">
+      <li class="item">
+        <div class="left">省会</div>
+        <div class="right">
+          <select name="province" id="province">
+            <option value="0000">请选择</option>
+          </select>
+        </div>
+      </li>
+      <li class="item">
+        <div class="left">城市</div>
+        <div class="right">
+          <select name="city" id="city"></select>
+        </div>
+      </li>
+      <li class="item">
+        <div class="left">学校</div>
+        <div class="right">
+          <select name="school" id="school"></select>
+        </div>
+      </li>
+    </ul>
+    <script src="./AllSchool.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

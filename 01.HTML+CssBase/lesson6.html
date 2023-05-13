@@ -1,0 +1,42 @@
+<!--
+ * @Author: Astray bitcreate@qq.com
+ * @Date: 2023-01-18 18:08:38
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-01-19 20:02:50
+ * @FilePath: \Code\HTML+CSS基础\lesson6.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./CSS/lesson6.css" />
+  </head>
+
+  <body>
+    <!-- 两栏布局 -->
+    <div class="left"></div>
+    <div class="right"></div>
+
+    <!-- 
+    如何触发盒子的BFC
+    1. position:absolute;
+    2. display:inline-block;
+    3. float:left/right;
+    4. overflow:hidden;
+   -->
+
+    <div class="wrapper">
+      <div class="content"></div>
+    </div>
+
+    <!-- 
+    浮动元素产生了浮动流
+    所有产生了浮动流的元素，块级元素看不到他
+    产生了BFC和文本类元素（inline）以及文本能看到浮动效果
+   -->
+  </body>
+</html>

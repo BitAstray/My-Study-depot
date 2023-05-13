@@ -1,0 +1,9 @@
+/* 参考 demo3效果.html  */
+
+img:nth-child(4n-3) {
+  margin-left: 0;
+}
+
+img:nth-child(4n) {
+  margin-right: 0;
+}

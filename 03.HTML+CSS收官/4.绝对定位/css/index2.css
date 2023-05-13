@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.item {
+  position: relative;
+  outline: 1px solid #000;
+  width: 230px;
+  height: 140px;
+  margin: 30px auto;
+}
+
+.item a img {
+  width: 230px;
+  height: 140px;
+}
+
+.item .aside {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  padding: 0 10px;
+}
+
+.aside .number {
+  float: left;
+}
+
+.aside .date {
+  float: right;
+}
+
+.number::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  /* outline: 1px solid red; */
+  background: url(../image/icons.png) no-repeat;
+  background-position: -255px -63px;
+  vertical-align: -2px;
+  margin-right: 3px;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .play {
+  /* !绝对、相对定位和浮动元素会自动变成block元素 */
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background: url(../image/icons.png);
+  background-position: -191px -63px;
+
+  left: 50%;
+  top: 50%;
+  margin-top: -21px;
+  margin-left: -21px;
+}

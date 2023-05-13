@@ -1,0 +1,133 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-15 12:30:27
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-15 22:18:46
+ * @FilePath: \Code\04.HTML+CSS语言提升(H5 + CSS3)\02. CSS3过渡和动画\练习题\demo4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-size: 100%;
+        font-weight: normal;
+      }
+      ul {
+        list-style: none;
+      }
+      .desc {
+        color: #666;
+        font-size: 14px;
+        text-align: center;
+        margin: 1em 0;
+      }
+      .menu-container {
+        width: 200px;
+        margin: 50px auto;
+        background: #434a50;
+        color: #fff;
+        line-height: 1.5;
+      }
+      .menu h2 {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .sub-menu {
+        background: #565c63;
+      }
+      .sub-menu li {
+        font-size: 14px;
+        padding: 8px 0 8px 30px;
+      }
+    </style>
+    <style>
+      /* 在这里完成作业 */
+      .menu-container {
+        border-radius: 5px;
+      }
+
+      .sub-menu {
+        height: 0;
+        overflow: hidden;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="desc">本效果需要用到JS</p>
+    <p class="desc">为降低复杂度，子菜单高度固定为150px</p>
+    <p class="desc">
+      因为如果高度为auto，无法产生过渡效果，必须通过一些特别的技巧才能解决
+    </p>
+    <div class="menu-container">
+      <div class="menu">
+        <h2>菜单1</h2>
+        <ul class="sub-menu">
+          <li>菜单1-1</li>
+          <li>菜单2-2</li>
+          <li>菜单3-3</li>
+          <li>菜单4-4</li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h2>菜单2</h2>
+        <ul class="sub-menu">
+          <li>菜单2-1</li>
+          <li>菜单2-2</li>
+          <li>菜单2-3</li>
+          <li>菜单2-4</li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h2>菜单3</h2>
+        <ul class="sub-menu">
+          <li>菜单3-1</li>
+          <li>菜单3-2</li>
+          <li>菜单3-3</li>
+          <li>菜单3-4</li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h2>菜单4</h2>
+        <ul class="sub-menu">
+          <li>菜单4-1</li>
+          <li>菜单4-2</li>
+          <li>菜单4-3</li>
+          <li>菜单4-4</li>
+        </ul>
+      </div>
+
+      <script>
+        var menus = document.querySelectorAll(".menu h2");
+        var subMenus = document.querySelectorAll(".sub-menu");
+        var curMenu = null; //已展开的菜单
+
+        for (var i = 0; i < menus.length; i++) {
+          (function (i) {
+            menus[i].addEventListener("click", function () {
+              // 关闭其他展开项
+              if (curMenu != subMenus[i] && curMenu) {
+                curMenu.style.height = 0;
+              }
+              // 有高度关闭，没有则展开
+              if (subMenus[i].clientHeight) {
+                subMenus[i].style.height = 0;
+                curMenu = null;
+              } else {
+                subMenus[i].style.height = 150 + "px";
+                curMenu = subMenus[i];
+              }
+            });
+          })(i);
+        }
+      </script>
+    </div>
+  </body>
+</html>

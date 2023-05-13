@@ -1,0 +1,70 @@
+<!--
+ * @Author: Astray bitcreate@qq.com
+ * @Date: 2023-02-15 19:51:46
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-02-15 20:10:14
+ * @FilePath: \Code\HTML+CSS收官\5.属性值计算过程\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .red {
+      color: red;
+      font-size: 40px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+
+    div h1.red {
+      font-size: 3em;
+      font-size: 30px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container1 {
+      color: red;
+    }
+
+    .container {
+      color: blue;
+    }
+  </style>
+  <body>
+    <!-- 
+      ? 1.确定声明值
+
+      ? 2.层叠冲突
+      ? 2.1-比较重要性  （作者>浏览器）
+      ? 2.2-比较特殊性  （权重）
+      ? 2.3-比较原次序
+
+      ? 3.使用继承：对没有值的属性，若可以继承，则继承父元素的值
+      ? 4.对仍然没有值的属性使用默认值
+     -->
+    <div>
+      <h1 class="red">属性值计算</h1>
+
+      <div class="container1">
+        <a href="#">百度</a>
+        <p>我是一个段落</p>
+      </div>
+
+      <div class="container2">
+        <a href="#">百度</a>
+        <p>我是一个段落</p>
+      </div>
+    </div>
+  </body>
+</html>

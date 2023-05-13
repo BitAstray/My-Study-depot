@@ -1,0 +1,69 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-16 13:39:16
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-16 14:51:43
+ * @FilePath: \Code\04.HTML+CSS语言提升(H5 + CSS3)\03. CSS3布局\练习题\弹性盒练习\demo6.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+    <style>
+      /* 在这里完成作业 */
+      .container {
+        padding: 0 20px;
+        display: flex;
+        background-color: #111111;
+        color: #cccccc;
+        height: 60px;
+        line-height: 60px;
+      }
+      a {
+        margin: 0 10px;
+      }
+      a.active {
+        color: #eecf6b;
+      }
+      .nav {
+        display: flex;
+        flex-grow: 1;
+        margin-left: 12px;
+      }
+      .personal {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="">
+        <h1>Logo</h1>
+      </a>
+      <div class="nav">
+        <a href="" class="active">首页</a>
+        <a href="">新闻</a>
+        <a href="">活动专区</a>
+        <a href="">游戏数据库</a>
+        <a href="">比赛</a>
+      </div>
+      <div class="personal">
+        <a href="">登录</a>
+        <a href="">注册</a>
+      </div>
+    </div>
+  </body>
+</html>

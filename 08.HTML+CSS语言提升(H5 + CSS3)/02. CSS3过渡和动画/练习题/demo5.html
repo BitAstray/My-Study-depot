@@ -1,0 +1,45 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-15 12:30:27
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-15 22:28:13
+ * @FilePath: \Code\04.HTML+CSS语言提升(H5 + CSS3)\02. CSS3过渡和动画\练习题\demo5.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ball {
+        width: 50px;
+        height: 50px;
+        background: #f40;
+        margin: 0 auto;
+        margin-top: 300px;
+      }
+    </style>
+    <style>
+      /* 在这里完成作业 */
+      .ball {
+        border-radius: 50%;
+        animation: jump 0.5s infinite alternate;
+      }
+      @keyframes jump {
+        0% {
+          transform: scale(1.3, 0.7);
+        }
+
+        100% {
+          background: fuchsia;
+          transform: scale(0.7, 1.3) translateY(-80px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball"></div>
+  </body>
+</html>

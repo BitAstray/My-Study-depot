@@ -1,0 +1,121 @@
+.banner {
+  height: 460px;
+  position: relative;
+}
+
+.banner-cover img {
+  width: 1226px;
+  height: 460px;
+}
+
+.banner-pointer {
+  /* 箭头统一样式 */
+  position: absolute;
+  width: 40px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  cursor: pointer;
+  top: 50%;
+  margin-top: -35px;
+  color: #b8c3cb;
+}
+
+.banner-pointer .iconfont {
+  font-size: 30px;
+}
+
+.banner-pointer-left {
+  left: 234px;
+}
+
+.banner-pointer-right {
+  right: 0;
+}
+
+.banner-pointer:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-dots {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.banner-dots span {
+  float: left;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.banner-dots .banner-dots-selected {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+/* 横幅菜单 */
+.banner-menu {
+  width: 234px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(105, 101, 101, 0.6);
+  padding: 20px 0;
+}
+
+.banner-menu-item {
+  height: 42px;
+  width: 100%;
+  line-height: 42px;
+  color: #fff;
+  padding: 0 20px 0 30px;
+  cursor: pointer;
+}
+
+.banner-menu li:hover {
+  background-color: #ff6700;
+}
+
+.banner-menu li:hover .banner-sub-menu {
+  display: block;
+}
+
+/* 子菜单 */
+.banner-sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 234px;
+  height: 100%;
+  background-color: #fff;
+  width: calc(1226px - 234px);
+  border: 1px solid #eee;
+}
+
+.banner-sub-menu a {
+  width: 25%;
+  height: 16.666%;
+  padding: 0 20px;
+}
+
+.banner-sub-menu a img {
+  width: 40px;
+  height: 40px;
+  margin-top: 17px;
+  margin-right: 12px;
+}
+
+.banner-sub-menu a span {
+  width: 154px;
+  margin-top: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

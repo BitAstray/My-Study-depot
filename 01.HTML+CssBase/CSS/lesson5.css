@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.test1 {
+  border: 1px solid black;
+  /* 对齐方式 */
+  text-align: left;
+  color: darkblue;
+  /* 默认行高1.2em */
+  line-height: 20px;
+  text-indent: 2em;
+  /* border-bottom: 1px solid blue; */
+}
+
+/* 
+  单位：
+  1. px == 像素
+  2. em == 1 * font-size
+*/
+
+.test2 {
+  color: rgb(0, 0, 238);
+  /* 鼠标提示符 */
+  cursor: move;
+    /* 文字线 */
+    text-decoration: underline;
+}
+
+/* 伪类选择器 name:name */
+.test3:hover {
+  background-color: orange;
+  border-radius: 10px;
+}

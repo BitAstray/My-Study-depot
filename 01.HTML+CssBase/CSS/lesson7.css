@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wapper {
+  border: 1px solid black;
+}
+
+.content {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background-color: yellow;
+}
+
+/* 利用伪元素清楚浮动 */
+.wapper::after {
+  content: "";
+  /* clear对块级元素使用才生效 */
+  clear: both;
+  display: block;
+}
+
+/* .clear {
+  clear: both;
+} */
+
+/* 伪元素选择器,伪元素默认是行级元素 */
+span::before{
+  content: "筱翊";
+}
+
+span::after{
+  content: ",还很帅!";
+}
+
+
+

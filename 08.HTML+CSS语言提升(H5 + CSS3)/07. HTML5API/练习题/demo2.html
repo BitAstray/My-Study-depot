@@ -1,0 +1,86 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-17 13:31:49
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-17 15:38:17
+ * @FilePath: \Code\04.HTML+CSS语言提升(H5 + CSS3)\07. HTML5API\练习题\demo2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form {
+        width: 200px;
+        margin: 0 auto;
+      }
+      .item {
+        margin: 1em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <div class="item">
+        <label>姓名</label>
+        <input id="name" type="text" />
+      </div>
+      <div class="item">
+        <label>年龄</label>
+        <input id="age" type="number" />
+      </div>
+      <div class="item">
+        <label>性别</label>
+        <label>
+          <input id="male" name="sex" type="radio" />
+          男
+        </label>
+        <label>
+          <input id="female" name="sex" type="radio" />
+          女
+        </label>
+      </div>
+    </div>
+    <script>
+      // 填写表单时，保存数据到本地
+      var inputs = document.querySelectorAll("input");
+      var tname = document.querySelector("#name");
+      var age = document.querySelector("#age");
+      var male = document.querySelector("#male");
+      var female = document.querySelector("#female");
+
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].oninput = save;
+      }
+
+      function save() {
+        var data = {
+          name: tname.value,
+          age: age.value ? +age.value : 0,
+          sex: male.checked ? "male" : "female",
+        };
+        data = JSON.stringify(data);
+        localStorage.setItem("data", data);
+      }
+      // 打开页面时，从本地加载数据到表单
+      function load() {
+        var data = JSON.parse(localStorage.getItem("data"));
+        if (!data) {
+          return;
+        }
+        tname.value = data.name ? data.name : "";
+        age.value = data.age ? data.age : 0;
+        if (data.sex == "male") {
+          male.checked = true;
+        } else if (data.sex == "female") {
+          female.checked = true;
+        }
+      }
+
+      load();
+    </script>
+  </body>
+</html>

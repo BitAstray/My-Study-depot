@@ -1,0 +1,55 @@
+<!--
+ * @Author: Astray bitcreate@qq.com
+ * @Date: 2023-02-10 17:48:49
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-02-10 18:21:52
+ * @FilePath: \Code\JavaScript基础\HomeWork\3.homeWork3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function transfer(key) {
+        switch (key) {
+          case "1":
+            return "壹";
+          case "2":
+            return "贰";
+          case "3":
+            return "叁";
+          case "4":
+            return "肆";
+          case "5":
+            return "伍";
+          case "6":
+            return "陆";
+          case "7":
+            return "柒";
+          case "8":
+            return "捌";
+          case "9":
+            return "玖";
+          case "0":
+            return "零";
+        }
+      }
+
+      function reverse() {
+        var num = window.prompt("input");
+        var str = "";
+
+        for (let i = num.length; i >= 0; i--) {
+          str += transfer(num[i]);
+        }
+
+        console.log(str);
+      }
+    </script>
+  </body>
+</html>

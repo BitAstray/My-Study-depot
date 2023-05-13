@@ -1,0 +1,53 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-15 12:30:27
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-15 21:30:20
+ * @FilePath: \Code\04.HTML+CSS语言提升(H5 + CSS3)\02. CSS3过渡和动画\练习题\demo2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        color: #666;
+        text-align: center;
+      }
+      .box {
+        width: 30px;
+        height: 30px;
+        background: #f40;
+        position: fixed;
+        left: 0;
+        top: 0;
+      }
+    </style>
+    <style>
+      /* 在这里完成作业 */
+      .box {
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ball" class="box"></div>
+    <p>在屏幕上点击任意位置试一试</p>
+    <p>此效果需要用到JS</p>
+
+    <script>
+      var ball = document.querySelector("#ball");
+      window.addEventListener("click", function (e) {
+        var top = e.clientY - ball.clientHeight / 2 + "px";
+        var left = e.clientX - ball.clientWidth / 2 + "px";
+        // ball.style.top = top + "px";
+        // ball.style.left = left + "px";
+        ball.style.transform = "translate(" + left + "," + top + ")";
+      });
+    </script>
+  </body>
+</html>

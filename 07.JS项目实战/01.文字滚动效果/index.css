@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notice {
+  background-color: #5de7e7;
+  margin: 5px;
+  padding: 15px 0px;
+}
+
+.notice::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.notice-title {
+  float: left;
+  font-size: 18px;
+  font-weight: normal;
+  margin-left: 20px;
+  margin-top: 3px;
+  padding-right: 20px;
+  border-right: 3px solid #b9b9b9;
+}
+
+.notice-list {
+  height: 30px;
+  float: left;
+  list-style: none;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.notice-list li {
+  height: 30px;
+  line-height: 30px;
+}

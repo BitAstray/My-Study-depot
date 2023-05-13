@@ -1,0 +1,27 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-17 17:15:55
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-05-04 21:42:16
+ * @FilePath: \Code\09. JavaScript语言提升\09. async和await\练习题\p1.html
+-->
+<ul id="heroList"></ul>
+
+<script>
+  /**
+   * 远程获取王者荣耀所有的英雄数据
+   */
+  async function getHeroes() {
+    return fetch("https://study.duyiedu.com/api/herolist")
+      .then((resp) => resp.json())
+      .then((resp) => resp.data);
+  }
+  // 利用getHeroes方法，获取所有的英雄数据，将英雄名称显示到页面的列表中
+  const heroList = document.querySelector("#heroList");
+  (async () => {
+    const heroNames = (await getHeroes()).map(
+      (item) => `<li>${item.cname}</li>`
+    );
+    heroList.innerHTML += heroNames.join("");
+  })();
+</script>

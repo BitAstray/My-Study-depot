@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: #0ea5e9;
+}
+ul {
+  list-style: none;
+}
+.gray {
+  color: #999;
+}
+.tc {
+  color: #333;
+}
+/* 容器 */
+.container {
+  position: relative;
+  width: 800px;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 5px #6d6d6d;
+  background-color: #fff;
+  padding: 60px 40px;
+}
+.container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  z-index: -5;
+  background: linear-gradient(to right, #22d3ee, #0ea5e9);
+  transform: rotate(-5deg);
+}
+h2 {
+  font-size: 22px;
+  padding: 10px 0;
+  border-bottom: 1px solid #c2c2c2;
+}
+/* 信息 */
+.info {
+  display: flex;
+}
+.info-name {
+  display: flex;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.info-name span {
+  font-size: 14px;
+  margin-top: 18px;
+  margin-left: 20px;
+}
+.info-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.info-items {
+  display: grid;
+  margin: 10px 10px;
+  grid-template-columns: 30px 280px 90px 140px;
+  row-gap: 10px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.info-item-title {
+  letter-spacing: 2em;
+}
+.w3 {
+  letter-spacing: normal;
+}
+/* 教育 */
+.education {
+  position: relative;
+  margin-top: 30px;
+}
+.education-list {
+  margin-top: 10px;
+  font-size: 14px;
+  border-left: 2px solid #0ea5e9;
+}
+.education-list::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  left: 0;
+  top: 10px;
+}
+.education-item {
+  position: relative;
+  padding: 20px;
+}
+.education-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0ea5e9;
+}
+/* 技能 */
+.skill {
+  margin-top: 30px;
+}
+.skill-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  justify-items: center;
+  color: #0ea5e9;
+}
+.skill-item {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  background-color: #f0fdff;
+  border-radius: 50%;
+}
+.skill-item::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #22d3ee;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+.level1::before {
+  border-top-color: #0ea5e9;
+}
+.level2::before {
+  border-top-color: #0ea5e9;
+  border-right-color: #0ea5e9;
+}
+.level3::before {
+  border-top-color: #0ea5e9;
+  border-right-color: #0ea5e9;
+  border-bottom-color: #0ea5e9;
+}
+.level4::before {
+  border-color: #0ea5e9;
+}
+/* 项目 */
+.project {
+  margin-top: 30px;
+}
+.project-list {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.project-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  row-gap: 10px;
+  font-size: 14px;
+}
+.project-item h3 {
+  grid-area: 1/1/2/3;
+  font-size: 18px;
+}
+.project-item .lable {
+  padding-right: 10px;
+  text-align: right;
+}
+/* 个人评价 */
+.judge {
+  margin-top: 30px;
+}
+
+.judge-txt {
+  padding: 20px 5px;
+}

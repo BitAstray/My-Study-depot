@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+.menu-container {
+  width: 200px;
+  margin: 0 auto;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.menu {
+  background-color: #9bc8f1;
+  margin-bottom: 20px;
+}
+
+.menu h2 {
+  font-size: 16px;
+  padding-left: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.submenu {
+  padding-left: 15px;
+  height: 0;
+  overflow: hidden;
+  background-color: #cae3f8;
+}
+
+.submenu li {
+  height: 30px;
+  cursor: pointer;
+}

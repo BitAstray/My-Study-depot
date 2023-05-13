@@ -1,0 +1,99 @@
+.footer-top {
+  height: 75px;
+  padding: 27px 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #616161;
+}
+
+.footer-top a {
+  width: 20%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 16px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.footer-top a:last-child {
+  border-right: none;
+}
+
+.footer-top .iconfont {
+  font-size: 26px;
+  vertical-align: -4px;
+}
+
+/* 页脚底部 */
+.footer-bottom {
+  padding: 40px 0;
+}
+
+.footer-links {
+  width: 160px;
+  color: #757575;
+}
+
+.footer-links h3 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #424242;
+  margin-bottom: 17px;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* 联系 */
+
+.footer-contact {
+  width: 245px;
+  border-left: 1px solid #eee;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer-phone {
+  font-size: 22px;
+  color: #ff6700;
+}
+
+.footer-support {
+  /* display: inline-block; */
+  width: 118px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ff6700;
+  color: #ff6700;
+  display: block;
+  margin: 3px auto;
+}
+
+.footer-support .iconfont {
+  vertical-align: -2px;
+}
+
+.footer-phone-desc {
+  color: #616161;
+}
+
+.footer-support:hover {
+  background-color: #ff6700;
+  color: #fff;
+}
+
+.footer-subcribe {
+  color: #616161;
+}
+
+.footer-subcribe .iconfont {
+  font-size: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.footer-subcribe .iconfont:hover {
+  color: #ff6700;
+}

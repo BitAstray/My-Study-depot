@@ -1,0 +1,46 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-04-15 12:30:27
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-04-15 13:43:41
+ * @FilePath: \Code\04.HTML+CSS语言提升(H5 + CSS3)\02. CSS3过渡和动画\练习题\demo1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        color: #666;
+        text-align: center;
+      }
+      .dog {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    </style>
+    <style>
+      /* 在这里完成作业 */
+      .dog {
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+
+      .dog:hover {
+        transform: scale(1.2) rotate(1turn);
+        opacity: 1;
+        box-shadow: 0 0 5px rgba(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./效果/doge.jpeg" class="dog" />
+    <p>移动鼠标到图片上</p>
+  </body>
+</html>
