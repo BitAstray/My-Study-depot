@@ -1,0 +1,48 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-05-13 15:54:28
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-05-17 13:29:19
+ * @FilePath: \Code\13. 第三方库\练习\06. Moment\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-group">
+        <label>中国</label>
+        <div data-zone="8"></div>
+      </div>
+      <div class="form-group">
+        <label>英国</label>
+        <div data-zone="1"></div>
+      </div>
+      <div class="form-group">
+        <label>纽约</label>
+        <div data-zone="-5"></div>
+      </div>
+      <div class="form-group">
+        <label>悉尼</label>
+        <div data-zone="10"></div>
+      </div>
+      <div>
+        <label>生日</label>
+        <input type="date" id="birthInput" />
+      </div>
+      <div class="form-group">
+        <div id="birthInfo"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.4/locale/zh-cn.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

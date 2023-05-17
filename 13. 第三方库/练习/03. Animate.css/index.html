@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        list-style: none;
+      }
+
+      li {
+        width: 50px;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="animate__animated animate__rotateIn">A</li>
+      <li class="animate__animated animate__zoomIn">N</li>
+      <li class="animate__animated animate__slideInDown">I</li>
+      <li class="animate__animated animate__flipInY">M</li>
+      <li class="animate__animated animate__bounceIn">A</li>
+      <li class="animate__animated animate__flipInX">T</li>
+      <li
+        class="animate__animated animate__delay-1s animate__lightSpeedInRight"
+      >
+        E
+      </li>
+    </ul>
+
+    <script>
+      const A = document.querySelector(".animate__rotateIn");
+      const E = document.querySelector(".animate__lightSpeedInLeft");
+
+      A.addEventListener("animationend", function () {
+        A.classList.remove("animate__rotateIn");
+        A.classList.add("animate__hinge");
+      });
+    </script>
+  </body>
+</html>
