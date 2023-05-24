@@ -1,15 +1,9 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#header {
+  color: black;
 }
-.a {
-  border-radius: 5px;
+#header .navigation {
+  font-size: 12px;
 }
-.b {
-  border-radius: 5px;
+#header .logo {
+  width: 300px;
 }
-.c {
-  border-radius: 10px;
-}
-/* 这是普通的css注释，它会生成到编译结果中 */

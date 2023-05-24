@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "c": "lessc index.less index.css",
-    "p1": "lessc p1.less p1.css",
-    "p2": "lessc ./hero/index.less ./hero/index.css"
+    "c1": "lessc ./练习题1/1.less ./练习题1/1.css",
+    "c2": "lessc ./练习题2/05.腾讯视频重磅推荐模块/2.less ./练习题2/05.腾讯视频重磅推荐模块/2.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "less": "^4.1.1"
+    "less": "^4.1.3"
   }
 }
