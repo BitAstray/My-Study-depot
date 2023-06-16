@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <img v-bind:src="image" alt="" /> -->
+      <!--* v-bind语法糖 -->
+      <img :src="image" alt="" />
+    </div>
+    <script src="./vue.min.js"></script>
+    <script>
+      var vm = new Vue({
+        data: {
+          image:
+            "https://ts3.cn.mm.bing.net/th?id=OIP-C.2zg2YQ9jHE0Gvd5P2SPpjwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+        },
+      });
+      vm.$mount("#app");
+    </script>
+  </body>
+</html>

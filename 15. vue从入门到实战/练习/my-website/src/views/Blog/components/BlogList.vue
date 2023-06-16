@@ -1,18 +1,8 @@
 <template>
-  <div
-    class="blog-list-container"
-    v-loading="isLoading"
-    ref="container"
-  >
+  <div class="blog-list-container" v-loading="isLoading" ref="container">
     <ul>
-      <li
-        v-for="item in data.rows"
-        :key="item.id"
-      >
-        <div
-          class="thumb"
-          v-if="item.thumb"
-        >
+      <li v-for="item in data.rows" :key="item.id">
+        <div class="thumb" v-if="item.thumb">
           <RouterLink
             :to="{
               name: 'BlogDetail',
@@ -21,11 +11,7 @@
               },
             }"
           >
-            <img
-              :alt="item.title"
-              :title="item.title"
-              v-lazy="item.thumb"
-            />
+            <img :alt="item.title" :title="item.title" v-lazy="item.thumb" />
           </RouterLink>
         </div>
         <div class="main">
@@ -61,6 +47,7 @@
         </div>
       </li>
     </ul>
+    <Empty v-if="data.rows.length === 0 && !isLoading" />
     <!-- 分页放到这里 -->
     <Pager
       :current="routeInfo.page"
@@ -76,13 +63,13 @@ import Pager from "@/components/Pager";
 import fetchData from "@/mixins/fetchData";
 import { getBlogs } from "@/api/blog";
 import { formatDate } from "@/utils";
-import { RouterLink } from "vue-router";
 import mainScroll from "@/mixins/mainScroll";
+import Empty from "@/components/Empty";
 export default {
-  mixins: [fetchData({}), mainScroll("container")],
+  mixins: [fetchData({ total: 0, rows: [] }), mainScroll("container")],
   components: {
     Pager,
-    RouterLink,
+    Empty,
   },
   methods: {
     async fetchData() {

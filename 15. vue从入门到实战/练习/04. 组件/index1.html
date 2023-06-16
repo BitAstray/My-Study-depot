@@ -1,0 +1,52 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-05-25 13:47:13
+ * @LastEditors: Astray bitcreate@qq.com
+ * @LastEditTime: 2023-05-25 17:51:05
+ * @FilePath: \Code\15. vue从入门到实战\练习\04. 组件\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./vue.min.js"></script>
+    <script>
+      var MyButton = {
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        template: `<button @click="count++">当前点击了{{count}}次</button>`,
+      };
+
+      // 全局注册一个组件
+      // Vue.component("MyButton", MyButton);
+
+      var Title = {
+        props: ["title"],
+        template: "<h1>{{title}}</h1>",
+      };
+
+      var vm = new Vue({
+        el: "#app",
+        components: {
+          MyButton,
+          Title,
+        },
+        template: `<div>
+          <MyButton/></MyButton>
+          <Title title="标题1" />
+          <Title title="标题2" />
+          <Title title="标题3" />
+          </div>`,
+      });
+    </script>
+  </body>
+</html>

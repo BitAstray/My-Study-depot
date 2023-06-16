@@ -2,32 +2,18 @@
  * @Author: Astray
  * @Date: 2023-06-03 20:50:49
  * @LastEditors: Astray bitcreate@qq.com
- * @LastEditTime: 2023-06-14 22:59:25
+ * @LastEditTime: 2023-06-16 13:04:30
  * @FilePath: \Code\15. vue从入门到实战\练习\my-website\src\views\Blog\Detail.vue
 -->
 <template>
   <Layout>
-    <div
-      ref="mainContainer"
-      class="main-container"
-      v-loading="isLoading"
-    >
-      <BlogDetail
-        :blog="data"
-        v-if="!isLoading"
-      />
+    <div ref="mainContainer" class="main-container" v-loading="isLoading">
+      <BlogDetail :blog="data" v-if="!isLoading" />
       <BlogComment v-if="!isLoading" />
     </div>
     <template #right>
-      <div
-        class="right-container"
-        v-loading="isLoading"
-        v-if="!isLoading"
-      >
-        <BlogTOC
-          :toc="data.toc"
-          v-if="!isLoading"
-        />
+      <div class="right-container" v-loading="isLoading" v-if="!isLoading">
+        <BlogTOC :toc="data.toc" v-if="!isLoading" />
       </div>
     </template>
   </Layout>
@@ -53,6 +39,11 @@ export default {
   methods: {
     async fetchData() {
       const resp = await getBlog(this.$route.params.id);
+      if (!resp) {
+        //文章不存在
+        this.$router.push("/404NotFound");
+        return;
+      }
       titleController.setRouteTitle(resp.title);
       return resp;
     },

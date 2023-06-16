@@ -2,7 +2,7 @@
  * @Author: Astray
  * @Date: 2023-05-29 16:01:01
  * @LastEditors: Astray bitcreate@qq.com
- * @LastEditTime: 2023-06-15 17:05:09
+ * @LastEditTime: 2023-06-16 12:58:35
  * @FilePath: \Code\15. vue从入门到实战\练习\my-website\src\views\Project\index.vue
 -->
 <template>
@@ -40,13 +40,18 @@
         </p>
       </div>
     </div>
+    <Empty v-if="data.length === 0 && !loading" />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import mainScroll from "@/mixins/mainScroll";
+import Empty from "@/components/Empty";
 export default {
+  components: {
+    Empty,
+  },
   mixins: [mainScroll("projectContainer")],
   created() {
     this.$store.dispatch("project/fetchProject");
