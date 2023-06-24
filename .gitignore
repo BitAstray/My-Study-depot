@@ -2,4 +2,6 @@ node_modules
 dist
 .DS_Store
 jsconfig.json
-my-website
+my-website-client
+my-website-backstage
+mysite-server-main
