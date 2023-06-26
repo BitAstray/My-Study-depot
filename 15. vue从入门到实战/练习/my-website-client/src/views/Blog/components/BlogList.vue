@@ -42,7 +42,7 @@
             </RouterLink>
           </div>
           <div class="desc">
-            同空能京南进安西完再支风飞严领光。得生这局月确位军们离存电。热建子光验复更度合确验前切声。
+            {{ item.description }}
           </div>
         </div>
       </li>
