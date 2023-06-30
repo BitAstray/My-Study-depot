@@ -2,7 +2,7 @@
  * @Author: Astray
  * @Date: 2023-06-16 16:13:10
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-06-19 23:03:01
+ * @LastEditTime: 2023-06-30 15:57:27
  * @FilePath: \Code\16. vue组件库从入门到实战\my-website-backstage\src\views\blogType\index.vue
 -->
 <template>
@@ -22,7 +22,7 @@
           <el-option label="5" value="5"></el-option>
         </el-select>
       </el-input>
-      <el-button type="primary" class="add-button" @click="addBlogType"
+      <el-button type="primary" class="add-button" @click="addBlogTypeHandle"
         >添加</el-button
       >
     </div>
@@ -135,7 +135,7 @@ export default {
       this.data = resp.data;
       this.listLoading = false;
     },
-    async addBlogType() {
+    async addBlogTypeHandle() {
       if (!this.input) {
         this.$message.error("分类名称不能为空");
       } else {
