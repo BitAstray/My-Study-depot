@@ -2,7 +2,7 @@
  * @Author: Astray
  * @Date: 2023-06-06 14:39:59
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-06-26 16:25:08
+ * @LastEditTime: 2023-06-26 17:16:22
  * @FilePath: \Code\15. vue从入门到实战\练习\my-website\src\views\Blog\components\BlogDetail.vue
 -->
 <template>
@@ -28,6 +28,8 @@
 
 <script>
 import { formatDate } from "@/utils";
+import "@/styles/markdown.css";
+// import "@/styles/gitbook.css";
 import "@toast-ui/editor/dist/toastui-editor.css";
 // ...
 import "prismjs/themes/prism.css";
