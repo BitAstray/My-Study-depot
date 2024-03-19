@@ -1,0 +1,7 @@
+{
+  "name": "del_img",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
