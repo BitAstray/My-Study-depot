@@ -1557,7 +1557,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8934,7 +8934,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8955,14 +8955,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9058,7 +9058,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uniapp-project","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -18071,10 +18071,158 @@ uni.addInterceptor({
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
+/* 46 */
+/*!**********************************************************!*\
+  !*** D:/Code/My-Study-depot/uniapp-project/api/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+/*
+ * @Author: BitCreate
+ * @Date: 2024-03-19 20:36:32
+ */
+var requireApi = __webpack_require__(47);
+var _module = {};
+requireApi.keys().forEach(function (key, index) {
+  if (key === "./index.js") return;
+  Object.assign(_module, requireApi(key));
+});
+var _default = _module;
+exports.default = _default;
+
+/***/ }),
+/* 47 */
+/*!************************************************************!*\
+  !*** D:/Code/My-Study-depot/uniapp-project/api sync \.js$ ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./index.js": 46,
+	"./interface/home.js": 48
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 47;
+
+/***/ }),
+/* 48 */
+/*!*******************************************************************!*\
+  !*** D:/Code/My-Study-depot/uniapp-project/api/interface/home.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.get_label_list = exports.get_article_list = void 0;
+var _http = _interopRequireDefault(__webpack_require__(/*! ../../utils/http */ 49));
+/*
+ * @Author: BitCreate
+ * @Date: 2024-03-19 20:44:17
+ */
+
+var get_label_list = function get_label_list() {
+  return (0, _http.default)({
+    name: "get_label_list"
+  });
+};
+exports.get_label_list = get_label_list;
+var get_article_list = function get_article_list(data) {
+  return (0, _http.default)({
+    name: "get_article_list",
+    data: data
+  });
+};
+exports.get_article_list = get_article_list;
+
+/***/ }),
+/* 49 */
+/*!***********************************************************!*\
+  !*** D:/Code/My-Study-depot/uniapp-project/utils/http.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = function _default(_ref) {
+  var name = _ref.name,
+    _ref$data = _ref.data,
+    data = _ref$data === void 0 ? {} : _ref$data;
+  // 返回一个promise对象
+  return new Promise(function (resolve, reject) {
+    // 打开Loading弹窗
+    uni.showLoading({});
+    // 调用云函数
+    uniCloud.callFunction({
+      name: name,
+      data: data,
+      success: function success(_ref2) {
+        var result = _ref2.result;
+        if (result.code === 0) {
+          // 请求成功
+          resolve(result.data);
+        } else {
+          // 后端无数据提示
+          uni.showToast({
+            title: result.msg,
+            icon: "none",
+            mask: true
+          });
+        }
+      },
+      fail: function fail(error) {
+        // 请求失败
+        reject(error);
+      },
+      complete: function complete() {
+        // 请求完成后关闭Loading弹窗
+        uni.hideLoading();
+      }
+    });
+  });
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"]))
+
+/***/ }),
 /* 50 */,
 /* 51 */,
 /* 52 */,
@@ -18101,7 +18249,33 @@ uni.addInterceptor({
 /* 73 */,
 /* 74 */,
 /* 75 */,
-/* 76 */
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
 /*!*************************************************************************************************************!*\
   !*** D:/Code/My-Study-depot/uniapp-project/uni_modules/uni-icons/components/uni-icons/uniicons_file_vue.js ***!
   \*************************************************************************************************************/
@@ -18602,166 +18776,6 @@ var fontData = [{
 
 // export const fontData = JSON.parse<IconsDataItem>(fontDataJson)
 exports.fontData = fontData;
-
-/***/ }),
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */
-/*!*******************************************************************!*\
-  !*** D:/Code/My-Study-depot/uniapp-project/api/interface/home.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.get_label_list = void 0;
-var _http = _interopRequireDefault(__webpack_require__(/*! ../../utils/http */ 97));
-var get_label_list = function get_label_list(data) {
-  return (0, _http.default)({
-    name: "get_label_list",
-    data: data
-  });
-};
-exports.get_label_list = get_label_list;
-
-/***/ }),
-/* 97 */
-/*!***********************************************************!*\
-  !*** D:/Code/My-Study-depot/uniapp-project/utils/http.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = function _default(_ref) {
-  var name = _ref.name,
-    _ref$data = _ref.data,
-    data = _ref$data === void 0 ? {} : _ref$data;
-  // 返回一个promise对象
-  return new Promise(function (resolve, reject) {
-    // 打开Loading弹窗
-    uni.showLoading({});
-    // 调用云函数
-    uniCloud.callFunction({
-      name: name,
-      data: data,
-      success: function success(_ref2) {
-        var result = _ref2.result;
-        if (result.code === 0) {
-          // 请求成功
-          resolve(result.data);
-        } else {
-          // 后端无数据提示
-          uni.showToast({
-            title: result.msg,
-            icon: "none",
-            mask: true
-          });
-        }
-      },
-      fail: function fail(error) {
-        // 请求失败
-        reject(error);
-      },
-      complete: function complete() {
-        // 请求完成后关闭Loading弹窗
-        uni.hideLoading();
-      }
-    });
-  });
-};
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"]))
-
-/***/ }),
-/* 98 */
-/*!**********************************************************!*\
-  !*** D:/Code/My-Study-depot/uniapp-project/api/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-/*
- * @Author: BitCreate
- * @Date: 2024-03-19 20:36:32
- */
-var requireApi = __webpack_require__(99);
-var _module = {};
-requireApi.keys().forEach(function (key, index) {
-  if (key === "./index.js") return;
-  Object.assign(_module, requireApi(key));
-});
-var _default = _module;
-exports.default = _default;
-
-/***/ }),
-/* 99 */
-/*!************************************************************!*\
-  !*** D:/Code/My-Study-depot/uniapp-project/api sync \.js$ ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./index.js": 98,
-	"./interface/home.js": 96
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 99;
 
 /***/ })
 ]]);

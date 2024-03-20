@@ -5,7 +5,7 @@
 <template>
   <swiper @change="changeActiveIndex" :current="activeIndex">
     <swiper-item v-for="(item, index) in labelList" :key="index">
-      <ListItem></ListItem>
+      <ListItem :classify="labelList[index].name"></ListItem>
     </swiper-item>
   </swiper>
 </template>
@@ -23,9 +23,6 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {};
-  },
   methods: {
     changeActiveIndex(e) {
       this.$emit("changeActiveIndex", e.detail.current);
@@ -34,4 +31,12 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.swiper-container {
+  height: 100%;
+  .swiper-item {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+</style>

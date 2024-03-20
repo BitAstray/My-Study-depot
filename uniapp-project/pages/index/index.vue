@@ -35,7 +35,7 @@ export default {
   methods: {
     async _initLabelList() {
       const res = await this.$http.get_label_list();
-      this.labelList = res;
+      this.labelList = [{ name: "全部" }, ...res];
     },
     changeActiveIndex(index) {
       this.activeIndex = index;

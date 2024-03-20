@@ -11,7 +11,7 @@
           :class="{ active: activeIndex === index }"
           class="tab-scroll-item"
           v-for="(item, index) in labelList"
-          :key="item.id"
+          :key="index"
           :id="`item${index}`"
           @click="changeActiveIndex(index)"
         >

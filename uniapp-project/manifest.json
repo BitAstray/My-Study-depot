@@ -52,7 +52,9 @@
 	"mp-weixin": {
 		"appid": "wx6e4c94aec2c27c05",
 		"setting": {
-			"urlCheck": false
+			"urlCheck": false,
+			"postcss": false,
+			"es6": false
 		},
 		"usingComponents": true
 	},
@@ -68,5 +70,8 @@
 	"uniStatistics": {
 		"enable": false
 	},
-	"vueVersion": "2"
+	"vueVersion": "2",
+	"h5": {
+		"template": "index.html"
+	}
 }
