@@ -1,19 +1,63 @@
+<!--
+ * @Author: BitCreate
+ * @Date: 2024-03-19 16:51:29
+-->
 <template>
-	<view>
-		<text>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus, totam animi qui aut iure labore voluptatibus alias delectus corrupti laboriosam numquam odio nemo
-			provident repudiandae ducimus voluptatum dolore iste.
-		</text>
-	</view>
+  <view class="home-container">
+    <NavBar></NavBar>
+    <!-- 选项卡 -->
+    <TabBar
+      :labelList="labelList"
+      :activeIndex="activeIndex"
+      @changeActiveIndex="changeActiveIndex"
+    ></TabBar>
+    <!-- 文章列表 -->
+    <ArticleList
+      class="list-container"
+      :labelList="labelList"
+      :activeIndex="activeIndex"
+      @changeActiveIndex="changeActiveIndex"
+    ></ArticleList>
+  </view>
 </template>
 
 <script>
 export default {
-	data() {
-		return {};
-	},
-	methods: {}
+  onLoad() {
+    this._initLabelList();
+  },
+  data() {
+    return {
+      labelList: [],
+      activeIndex: 0,
+    };
+  },
+  methods: {
+    async _initLabelList() {
+      const res = await this.$http.get_label_list();
+      this.labelList = res;
+    },
+    changeActiveIndex(index) {
+      this.activeIndex = index;
+    },
+  },
 };
 </script>
 
-<style></style>
+<style lang="scss">
+page {
+  display: flex;
+  height: 100%;
+}
+.home-container {
+  flex: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  @include flex(flex-start, column);
+  align-items: inherit;
+}
+.list-container {
+  flex: 1;
+  box-sizing: border-box;
+}
+</style>

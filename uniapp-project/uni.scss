@@ -77,13 +77,14 @@ $uni-font-size-paragraph: 15px;
 
 /* 多行注释 */
 @mixin flex($level_style: space-between, $vertical_style: row, $isWrapper: nowrap) {
-	display: flex;
-	align-items: center;
-	justify-content: $level_style;
-	flex-wrap: $isWrapper;
-	flex-direction: $vertical_style;
+  display: flex;
+  align-items: center;
+  justify-content: $level_style;
+  flex-wrap: $isWrapper;
+  flex-direction: $vertical_style;
 }
 
 // $base-color:#ff6600;
 /* 全局系统样式定义 */
 $base-color: #f25037;
+$c-9: #999;
