@@ -2,9 +2,13 @@
  * @Author: BitCreate
  * @Date: 2024-03-19 21:05:23
 -->
+<!--
+ * @Author: BitCreate
+ * @Date: 2024-03-19 21:05:23
+-->
 <template>
-  <swiper @change="changeActiveIndex" :current="activeIndex">
-    <swiper-item v-for="(item, index) in labelList" :key="index">
+  <swiper @change="changeActiveIndex" :current="activeIndex" class="swiper-container">
+    <swiper-item v-for="(item, index) in labelList" :key="index" class=".swiper-item">
       <ListItem :classify="labelList[index].name"></ListItem>
     </swiper-item>
   </swiper>

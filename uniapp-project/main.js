@@ -4,11 +4,13 @@ import App from "./App";
 import Vue from "vue";
 import "./uni.promisify.adaptor";
 import module from "./api";
+import store from "./store";
 Vue.config.productionTip = false;
 Vue.prototype.$http = module;
 App.mpType = "app";
 const app = new Vue({
   ...App,
+  store,
 });
 app.$mount();
 // #endif

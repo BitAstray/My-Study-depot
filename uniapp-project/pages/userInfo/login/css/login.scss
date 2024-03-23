@@ -1,0 +1,51 @@
+.login-container {
+  width: 100%;
+  .banner-bg {
+    width: 100%;
+    height: 400rpx;
+  }
+  .login-nav {
+    @include flex();
+    padding: 0 146rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: $c-9;
+    .nav-item {
+      position: relative;
+      margin-bottom: 40rpx;
+      &.active {
+        color: $base-color;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -20rpx;
+          left: 50%;
+          width: 60rpx;
+          height: 8rpx;
+          border-radius: 4rpx;
+          transform: translateX(-50%);
+          background-color: $base-color;
+        }
+      }
+    }
+  }
+  .login-other {
+    width: 640rpx;
+    margin: 20rpx auto 0;
+    @include flex();
+    color: $c-9;
+    font-size: 26rpx;
+    text-decoration: underline;
+  }
+}
+
+.login-btn {
+  width: 640rpx;
+  height: 90rpx;
+  border-radius: 12rpx;
+  background-color: $base-color;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+  color: #fff;
+  @include flex(center);
+}

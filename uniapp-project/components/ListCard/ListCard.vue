@@ -1,5 +1,9 @@
+<!--
+ * @Author: BitCreate
+ * @Date: 2024-03-20 14:23:33
+-->
 <template>
-  <view>
+  <view @click="goArticleDetail">
     <!-- 基础卡片 -->
     <view class="list-card" v-show="item.mode === 'base'">
       <view class="list-card-img">
@@ -8,7 +12,7 @@
       <view class="list-card-content">
         <view class="list-card-content-title">
           <text>{{ item.title }}</text>
-          <SaveLikes></SaveLikes>
+          <SaveLikes :item="item"></SaveLikes>
         </view>
         <view class="list-card-content-desc">
           <view class="article-type">{{ item.classify }}</view>
@@ -21,7 +25,7 @@
     <view class="list-card mode-column" v-show="item.mode === 'column'">
       <view class="list-card-top">
         <text>{{ item.title }}</text>
-        <SaveLikes></SaveLikes>
+        <SaveLikes :item="item"></SaveLikes>
       </view>
 
       <view class="list-card-middle">
@@ -46,7 +50,7 @@
 
       <view class="list-card-middle">
         <text>{{ item.title }}</text>
-        <SaveLikes></SaveLikes>
+        <SaveLikes :item="item"></SaveLikes>
       </view>
 
       <view class="list-card-content-desc list-card-bottom">
@@ -65,6 +69,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    goArticleDetail() {
+      console.log("goArticleDetail");
+    },
   },
 };
 </script>
