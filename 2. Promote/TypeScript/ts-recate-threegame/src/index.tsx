@@ -1,0 +1,18 @@
+/*
+ * @Author: BitCreate
+ * @Date: 2024-03-24 21:51:20
+ */
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+

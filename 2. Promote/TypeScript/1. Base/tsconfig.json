@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    // 编译选项
+    "target": "ES2016", // 编译后的目标版本
+    "module": "commonjs", // 模块化规范
+    "lib": ["ES2016"], // 编译过程中需要引入的库文件
+    "outDir": "./dist", // 编译后的文件目录
+    "strictNullChecks": true, // 严格的空检查
+    "removeComments": true, // 移除注释
+    "esModuleInterop": true, // 允许在导入任何模块时使用默认导入语法
+    "noEmitOnError": true, // 在发生错误时不生成编译文件
+    "moduleResolution": "node", // 模块解析策略
+    "strictPropertyInitialization": true, // 严格的属性初始化检查
+    "forceConsistentCasingInFileNames": true, // 确保文件名的大小写一致
+    "strict": true // 启用所有严格类型检查选项
+  },
+  "include": ["./src"] // 需要编译的文件目录
+}
