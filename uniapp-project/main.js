@@ -1,3 +1,7 @@
+/*
+ * @Author: BitCreate
+ * @Date: 2024-03-25 15:24:32
+ */
 import App from "./App";
 
 // #ifndef VUE3
@@ -5,6 +9,8 @@ import Vue from "vue";
 import "./uni.promisify.adaptor";
 import module from "./api";
 import store from "./store";
+import commonMixin from "./common/commonMixin";
+Vue.use(commonMixin);
 Vue.config.productionTip = false;
 Vue.prototype.$http = module;
 App.mpType = "app";

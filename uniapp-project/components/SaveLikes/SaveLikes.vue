@@ -4,7 +4,12 @@
 -->
 <template>
   <view class="save-icons">
-    <uni-icons @click="changeSaveStatus" type="heart-filled" color="#ff6600" size="20" />
+    <uni-icons
+      @click="changeSaveStatus"
+      :type="isInfo ? 'heart-filled' : 'heart'"
+      color="#ff6600"
+      size="20"
+    />
   </view>
 </template>
 
@@ -17,16 +22,26 @@ export default {
       default: () => {},
     },
   },
-  data() {
-    return {};
+  computed: {
+    isInfo() {
+      if (this.userInfo) {
+        return this.userInfo.article_likes_ids.includes(this.item._id);
+      }
+      return false;
+    },
   },
   methods: {
     async changeSaveStatus() {
-      console.log(this.item._id);
-      // todo 判断用户是否登录
-      // 登录 改变当前的收藏状态
-      // 没有登录 跳转到登录页面
-      uni.navigateTo({ url: "/pages/userInfo/login/login" });
+      await this.checkedIsLogin();
+      const { msg, data } = await this.$http.update_save_like({
+        articleId: this.item._id,
+        userId: this.userInfo._id,
+      });
+      uni.showToast({
+        title: msg,
+        mask: true,
+      });
+      this.updateUserInfo(data);
     },
   },
 };

@@ -24,4 +24,18 @@
       color: $c-9;
     }
   }
+  // 搜索页面单独样式
+  .return-icon {
+    position: absolute;
+    height: 60rpx;
+    left: 0rpx;
+    @include flex(flex-start);
+  }
+
+  .search-input {
+    font-size: 28rpx;
+    color: #999999;
+    width: 100%;
+    text-indent: 20rpx;
+  }
 }

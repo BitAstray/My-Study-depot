@@ -16,3 +16,27 @@ export const get_article_list = (data) => {
     data,
   });
 };
+
+// 收藏或取消文章
+export const update_save_like = (data) => {
+  return http({
+    name: "update_save_like",
+    data,
+  });
+};
+
+// 获取搜索文章内容
+export const get_search_data = (data) => {
+  return http({
+    name: "get_search_data",
+    data,
+  });
+};
+
+// 修改用户保存的选项卡标签
+export const update_label_ids = (data) => {
+  return http({
+    name: "update_label_ids",
+    data,
+  });
+};

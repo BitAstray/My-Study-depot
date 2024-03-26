@@ -5,8 +5,13 @@
 <template>
   <view class="list-scroll-container">
     <scroll-view scroll-y class="list-scroll" @scrolltolower="loadMore">
-      <ListCard v-for="item in articleList" :key="item._id" :item="item"></ListCard>
-      <uni-load-more :status="status" />
+      <ListCard
+        v-on="$listeners"
+        v-for="item in articleList"
+        :key="item._id"
+        :item="item"
+      ></ListCard>
+      <uni-load-more :status="status" v-if="this.classify" />
     </scroll-view>
   </view>
 </template>
@@ -14,11 +19,19 @@
 <script>
 export default {
   created() {
-    this._getArticleList();
+    if (this.classify) this._getArticleList();
+    if (this.searchList.length) this.articleList = this.searchList;
   },
   name: "ListItem",
   props: {
-    classify: String,
+    classify: {
+      type: String,
+      default: "",
+    },
+    searchList: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -31,6 +44,7 @@ export default {
   },
   methods: {
     loadMore() {
+      if (this.classify === "") return;
       if (this.status === "loading") return;
       if (this.articleList.length >= this.total) {
         this.status = "noMore";

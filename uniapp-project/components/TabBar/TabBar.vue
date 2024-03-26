@@ -20,7 +20,7 @@
       </view>
     </scroll-view>
     <!-- 图标部分 -->
-    <view class="tab-icon">
+    <view class="tab-icon" @click="goLabelAdmin">
       <uni-icons type="gear" color="#666" size="26" />
     </view>
   </view>
@@ -45,6 +45,12 @@ export default {
     },
   },
   methods: {
+    // 跳转到标签管理界面
+    async goLabelAdmin() {
+      await this.checkedIsLogin();
+      uni.navigateTo({ url: "/pages/labelAdmin/labelAdmin" });
+    },
+
     changeActiveIndex(index) {
       this.$emit("changeActiveIndex", index);
     },

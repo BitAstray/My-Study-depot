@@ -73,6 +73,7 @@ export default {
   methods: {
     goArticleDetail() {
       console.log("goArticleDetail");
+      this.$emit("saveSearchHistory");
     },
   },
 };

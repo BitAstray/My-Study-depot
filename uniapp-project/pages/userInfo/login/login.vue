@@ -127,14 +127,19 @@ export default {
       const userInfo = await this.$http.user_login(data);
       if (userInfo) {
         // 使用store的形式进行存储
-        this.updateUserInfo(userInfo);
+        this.updateUserInfo(userInfo[0]);
         uni.showToast({
           title: "登录成功",
           icon: "none",
           mask: true,
         });
         setTimeout(() => {
+          // #ifdef H5
+          uni.switchTab({ url: "/pages/index/index" });
+          // #endif
+          // #ifndef H5
           uni.navigateBack();
+          // #endif
         }, 1500);
       }
     },
