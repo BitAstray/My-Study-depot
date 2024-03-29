@@ -1,11 +1,15 @@
+/*
+ * @Author: BitCreate
+ * @Date: 2024-03-29 13:44:29
+ */
 "use strict";
 const db = uniCloud.database();
 exports.main = async (event, context) => {
-  const { user, password, phone, type } = event;
+  const { username, password, phone, type } = event;
   const res = await db
     .collection("user")
     .aggregate()
-    .match(type === "account" ? { loginName: user, password } : { phone })
+    .match(type === "account" ? { loginName: username, password } : { phone })
     .end();
   //返回数据给客户端
 

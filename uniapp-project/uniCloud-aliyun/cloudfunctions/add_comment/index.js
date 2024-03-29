@@ -6,18 +6,25 @@
 const db = uniCloud.database();
 const dbCmd = db.command;
 exports.main = async (event, context) => {
-  const { userId, articleId, content } = event;
+  const {
+    userId,
+    articleId,
+    content,
+    comment_id = "",
+    reply_id = "",
+    is_reply = false,
+  } = event;
   // 获取用户信息
   let user = await db.collection("user").doc(userId).get();
   user = user.data[0];
   // 获取文章信息
-  let article = await db.collection("article").doc(articleId).get();
-  article = article.data[0];
+  const article = await db.collection("article").doc(articleId).get();
+  const comments = article.data[0].comment;
   let commentObj = {
     comment_id: generateID(5),
     comment_content: content,
     create_time: new Date(),
-    is_reply: false,
+    is_reply,
     replyArr: [],
     author: {
       author_id: user._id,
@@ -27,7 +34,28 @@ exports.main = async (event, context) => {
     },
   };
 
-  commentObj = dbCmd.unshift(commentObj);
+  if (comment_id === "") {
+    commentObj.replyArr = [];
+    commentObj = dbCmd.unshift(commentObj);
+  } else {
+    // 获取当前评论的集合，在这个集合里面找到指定的评论，修改指定的replayArr
+    let commentAuthor = null;
+    let commentIndex = comments.findIndex((item) => item.comment_id === comment_id);
+    if (is_reply) {
+      commentAuthor = comments[commentIndex].replyArr.find(
+        (item) => item.comment_id === reply_id
+      ).author.author_name;
+    } else {
+      commentAuthor = comments[commentIndex].author.author_name;
+    }
+    commentObj.to = commentAuthor;
+    commentObj = {
+      [commentIndex]: {
+        replyArr: dbCmd.unshift(commentObj),
+      },
+    };
+  }
+
   await db.collection("article").doc(articleId).update({
     comment: commentObj,
   });

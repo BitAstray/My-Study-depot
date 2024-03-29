@@ -25,6 +25,11 @@
                 margin-bottom: 20rpx;
                 font-size: 28rpx;
                 color: #333;
+                .reply-text{
+                    margin: 0 20rpx;
+                    font-weight: bold;
+                    color: #000;
+                }
             }
         }
     }
@@ -43,5 +48,11 @@
                 border: 1px solid #ccc;
             }
         }
+    }
+    // 添加回复组件样式
+    .comment-reply-list {
+        padding-left: 40rpx;
+        border-bottom: 1px solid $base-color;
+        transform: scale(.9);
     }
 }

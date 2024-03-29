@@ -35,9 +35,9 @@
           v-for="item in commitList"
           ::key="item.comment_id"
         >
-          <CommentBox :commentData="item"></CommentBox>
-          <view class="no-data"> 暂无评论 </view>
+          <CommentBox :commentData="item" @commentReply="commentReply"></CommentBox>
         </view>
+        <view class="no-data" v-if="!commitList.length"> 暂无评论 </view>
       </view>
     </view>
 
@@ -81,7 +81,6 @@ export default {
     this.articleData = JSON.parse(options[0].params);
     // 文章详情的获取
     this._getArticleDetail();
-    console.log("🚀 ~ onLoad ~ this.articleData:", this.articleData);
     // 获取评论列表
     this._getCommentList();
   },
@@ -91,6 +90,7 @@ export default {
       showPopup: false,
       commentVal: "",
       commitList: [],
+      replyData: {},
     };
   },
   methods: {
@@ -99,24 +99,29 @@ export default {
       await this.checkedIsLogin();
       this.showPopup = true;
     },
+    // 获取文章详细
     async _getArticleDetail() {
       const res = await this.$http.get_article_detail({
         article_id: this.articleData._id,
       });
       this.articleData = res;
     },
+    // 发送内容到后端
     async _sendCommentData(val) {
       // 发送评论内容到后端
       const res = await this.$http.add_comment({
         userId: this.userInfo._id,
         articleId: this.articleData._id,
         content: val,
+        ...this.replyData,
       });
       uni.showToast({
         title: res.msg,
         mask: true,
       });
       this.showPopup = false;
+      this.replyData = {};
+      this._getCommentList();
     },
     // 获取评论
     async _getCommentList() {
@@ -124,6 +129,15 @@ export default {
         articleId: this.articleData._id,
       });
       this.commitList = res;
+    },
+    // 处理回复事件函数
+    commentReply(data) {
+      this.replyData = {
+        comment_id: data.comment.comment_id,
+        is_reply: data.isReply,
+      };
+      data.comment.reply_id && (this.replyData.reply_id = data.comment.reply_id);
+      this.openMaskerComment();
     },
   },
   computed: {
