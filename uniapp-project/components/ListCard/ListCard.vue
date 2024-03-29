@@ -7,7 +7,10 @@
     <!-- 基础卡片 -->
     <view class="list-card" v-show="item.mode === 'base'">
       <view class="list-card-img">
-        <image :src="item.cover[0] ? item.cover[0] : '/static/img/logo.jpeg'" mode="aspectFill" />
+        <image
+          :src="item.cover[0] ? item.cover[0] : '/static/img/logo.jpeg'"
+          mode="aspectFill"
+        />
       </view>
       <view class="list-card-content">
         <view class="list-card-content-title">
@@ -29,7 +32,11 @@
       </view>
 
       <view class="list-card-middle">
-        <view class="img-container" v-for="(img, index) in item.cover.slice(0, 3)" :key="index">
+        <view
+          class="img-container"
+          v-for="(img, index) in item.cover.slice(0, 3)"
+          :key="index"
+        >
           <image :src="img" mode="aspectFill" />
         </view>
       </view>
@@ -72,7 +79,20 @@ export default {
   },
   methods: {
     goArticleDetail() {
-      console.log("goArticleDetail");
+      const { _id, title, author, create_time, thumbs_up_count, browse_count } =
+        this.item;
+      const params = {
+        _id,
+        title,
+        author,
+        create_time,
+        thumbs_up_count,
+        browse_count,
+      };
+      // 跳转到文章详情页
+      uni.navigateTo({
+        url: `/pages/articleDetail/articleDetail?params=${JSON.stringify(params)}`,
+      });
       this.$emit("saveSearchHistory");
     },
   },

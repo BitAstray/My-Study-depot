@@ -40,3 +40,27 @@ export const update_label_ids = (data) => {
     data,
   });
 };
+
+// 获取文章详情
+export const get_article_detail = (data) => {
+  return http({
+    name: "get_article_detail",
+    data,
+  });
+};
+
+// 添加评论
+export const add_comment = (data) => {
+  return http({
+    name: "add_comment",
+    data,
+  });
+};
+
+// 获取评论列表
+export const get_comment_list = (data) => {
+  return http({
+    name: "get_comment_list",
+    data,
+  });
+};
