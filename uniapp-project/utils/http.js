@@ -1,8 +1,9 @@
 export default ({ name, data = {} }) => {
   // 返回一个promise对象
   return new Promise((resolve, reject) => {
-    // 打开Loading弹窗
-    uni.showLoading({});
+    const loading = data.isLoading;
+    data.isLoading && delete data.isLoading;
+    if (loading !== "noLoading") uni.showLoading({});
     // 调用云函数
     uniCloud.callFunction({
       name: name,
@@ -26,7 +27,7 @@ export default ({ name, data = {} }) => {
       },
       complete() {
         // 请求完成后关闭Loading弹窗
-        uni.hideLoading();
+        if (loading !== "noLoading") uni.hideLoading();
       },
     });
   });

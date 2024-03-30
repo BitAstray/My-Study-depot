@@ -6,7 +6,7 @@
   <view class="list-scroll-container">
     <scroll-view scroll-y class="list-scroll" @scrolltolower="loadMore">
       <ListCard
-        v-on="$listeners"
+        @saveSearchHistory="$emit('saveSearchHistory')"
         v-for="item in articleList"
         :key="item._id"
         :item="item"
@@ -31,6 +31,11 @@ export default {
     searchList: {
       type: Array,
       default: () => [],
+    },
+  },
+  watch: {
+    searchList() {
+      this.articleList = this.searchList;
     },
   },
   data() {

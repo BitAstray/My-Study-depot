@@ -3,13 +3,8 @@
  * @Date: 2024-03-20 14:38:25
 -->
 <template>
-  <view class="save-icons">
-    <uni-icons
-      @click="changeSaveStatus"
-      :type="isInfo ? 'heart-filled' : 'heart'"
-      color="#ff6600"
-      size="20"
-    />
+  <view class="save-icons" @click.stop="changeSaveStatus">
+    <uni-icons :type="isInfo ? 'heart-filled' : 'heart'" color="#ff6600" :size="size" />
   </view>
 </template>
 
@@ -21,13 +16,18 @@ export default {
       type: Object,
       default: () => {},
     },
+    size: {
+      type: String,
+      default: "20",
+    },
   },
   computed: {
     isInfo() {
-      if (this.userInfo) {
-        return this.userInfo.article_likes_ids.includes(this.item._id);
+      try {
+        return this.userInfo && this.userInfo.article_likes_ids.includes(this.item._id);
+      } catch (error) {
+        return false;
       }
-      return false;
     },
   },
   methods: {
@@ -39,9 +39,11 @@ export default {
       });
       uni.showToast({
         title: msg,
+        icon: "none",
         mask: true,
       });
       this.updateUserInfo(data);
+      uni.$emit("updateArticle");
     },
   },
 };

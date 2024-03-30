@@ -1,1 +1,1 @@
-<view class="save-icons"><uni-icons vue-id="b6971c7c-1" type="heart-filled" color="#ff6600" size="20" data-event-opts="{{[['^click',[['changeSaveStatus']]]]}}" bind:click="__e" bind:__l="__l"></uni-icons></view>
+<view data-event-opts="{{[['tap',[['changeSaveStatus',['$event']]]]]}}" class="save-icons" catchtap="__e"><uni-icons vue-id="b6971c7c-1" type="{{isInfo?'heart-filled':'heart'}}" color="#ff6600" size="{{size}}" bind:__l="__l"></uni-icons></view>

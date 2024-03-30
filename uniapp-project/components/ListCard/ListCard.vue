@@ -5,7 +5,7 @@
 <template>
   <view @click="goArticleDetail">
     <!-- 基础卡片 -->
-    <view class="list-card" v-show="item.mode === 'base'">
+    <view class="list-card" v-if="item.mode === 'base'">
       <view class="list-card-img">
         <image
           :src="item.cover[0] ? item.cover[0] : '/static/img/logo.jpeg'"
@@ -25,7 +25,7 @@
     </view>
 
     <!-- 多图模式 -->
-    <view class="list-card mode-column" v-show="item.mode === 'column'">
+    <view class="list-card mode-column" v-if="item.mode === 'column'">
       <view class="list-card-top">
         <text>{{ item.title }}</text>
         <SaveLikes :item="item"></SaveLikes>
@@ -48,7 +48,7 @@
     </view>
 
     <!-- 大图模式 -->
-    <view class="list-card mode-image" v-show="item.mode === 'image'">
+    <view class="list-card mode-image" v-if="item.mode === 'image'">
       <view class="list-card-top">
         <view class="img-container">
           <image :src="item.cover[0]" mode="aspectFill" />
@@ -90,8 +90,12 @@ export default {
         browse_count,
       };
       // 跳转到文章详情页
-      uni.navigateTo({
-        url: `/pages/articleDetail/articleDetail?params=${JSON.stringify(params)}`,
+      // uni.navigateTo({
+      //   url: `/pages/articleDetail/articleDetail?params=${JSON.stringify(params)}`,
+      // });
+      this.$Router.push({
+        path: "/pages/articleDetail/articleDetail",
+        query: params,
       });
       this.$emit("saveSearchHistory");
     },

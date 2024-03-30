@@ -27,7 +27,6 @@
 /* 多行注释 */
 /* 全局系统样式定义 */
 .code-container.data-v-116015a4 {
-  width: 200rpx;
   margin-right: 20rpx;
 }
 .code-container .vCode-btn.data-v-116015a4 {

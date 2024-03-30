@@ -4,7 +4,10 @@
     "pages/follow/follow",
     "pages/self/self",
     "pages/search/search",
-    "pages/userInfo/login/login"
+    "pages/userInfo/login/login",
+    "pages/labelAdmin/labelAdmin",
+    "pages/articleDetail/articleDetail",
+    "pages/commentList/commentList"
   ],
   "subPackages": [],
   "window": {

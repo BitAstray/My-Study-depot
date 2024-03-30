@@ -10,7 +10,9 @@ import "./uni.promisify.adaptor";
 import module from "./api";
 import store from "./store";
 import commonMixin from "./common/commonMixin";
+import { router, RouterMount } from "./router";
 Vue.use(commonMixin);
+Vue.use(router);
 Vue.config.productionTip = false;
 Vue.prototype.$http = module;
 App.mpType = "app";
@@ -18,6 +20,13 @@ const app = new Vue({
   ...App,
   store,
 });
+// #endif
+
+// #ifdef H5
+RouterMount(app, router, "#app");
+// #endif
+
+// #ifndef H5
 app.$mount();
 // #endif
 

@@ -19,3 +19,35 @@ export const send_code = (data) => {
     data,
   });
 };
+
+// 修改保存文章作者状态
+export const update_follow_author = (data) => {
+  return http({
+    name: "update_follow_author",
+    data,
+  });
+};
+
+// 改变点赞状态
+export const update_compliments = (data) => {
+  return http({
+    name: "update_compliments",
+    data,
+  });
+};
+
+// 获取收藏文章
+export const get_follow_article = (data) => {
+  return http({
+    name: "get_follow_article",
+    data,
+  });
+};
+
+// 获取关注作者
+export const get_follow_author = (data) => {
+  return http({
+    name: "get_follow_author",
+    data,
+  });
+};
