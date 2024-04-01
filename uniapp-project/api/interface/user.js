@@ -51,3 +51,11 @@ export const get_follow_author = (data) => {
     data,
   });
 };
+
+// 检查下载
+export const get_current_version = (data) => {
+  return http({
+    name: "get_current_version",
+    data,
+  });
+};

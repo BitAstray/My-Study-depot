@@ -59,7 +59,7 @@
       </view>
 
       <!-- #ifdef APP-PLUS -->
-      <view class="my-content-list">
+      <view class="my-content-list" @click="haveNewVersion && _getNewVersion">
         <view class="my-content-list-title">
           <uni-icons class="icons" type="paperclip" size="16" color="#666"></uni-icons>
           <view class="version-container">
@@ -125,6 +125,39 @@ export default {
         this.haveNewVersion = true;
         this.downLoadLinkUrl = downLoadLinkUrl;
       }
+    },
+    // 最新版本下载
+    async _getNewVersion() {
+      uni.showLoading({ title: "下载中，请稍后" });
+      var dtask = plus.downloader.createDownload(
+        this.downLoadLinkUrl,
+        {},
+        function (d, status) {
+          // 下载完成
+          uni.hideLoading({});
+          if (status == 200) {
+            plus.runtime.install(
+              plus.io.convertLocalFileSystemURL(d.filename),
+              {},
+              {},
+              function (error) {
+                uni.showToast({
+                  title: "安装失败",
+                  duration: 1500,
+                  icon: "none",
+                });
+              }
+            );
+          } else {
+            uni.showToast({
+              title: "更新失败",
+              duration: 1500,
+              icon: "none",
+            });
+          }
+        }
+      );
+      dtask.start();
     },
   },
 };

@@ -23487,7 +23487,7 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/inte
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.user_login = exports.update_follow_author = exports.update_compliments = exports.send_code = exports.get_follow_author = exports.get_follow_article = void 0;
+exports.user_login = exports.update_follow_author = exports.update_compliments = exports.send_code = exports.get_follow_author = exports.get_follow_article = exports.get_current_version = void 0;
 var _http = _interopRequireDefault(__webpack_require__(/*! ../../utils/http */ 49));
 /*
  * @Author: BitCreate
@@ -23546,7 +23546,16 @@ var get_follow_author = function get_follow_author(data) {
     data: data
   });
 };
+
+// 检查下载
 exports.get_follow_author = get_follow_author;
+var get_current_version = function get_current_version(data) {
+  return (0, _http.default)({
+    name: "get_current_version",
+    data: data
+  });
+};
+exports.get_current_version = get_current_version;
 
 /***/ }),
 

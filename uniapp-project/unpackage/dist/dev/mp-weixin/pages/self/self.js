@@ -341,6 +341,46 @@ var _default = {
           }
         }, _callee);
       }))();
+    },
+    // 最新版本下载
+    _getNewVersion: function _getNewVersion() {
+      var _this3 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+        var dtask;
+        return _regenerator.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                uni.showLoading({
+                  title: "下载中，请稍后"
+                });
+                dtask = plus.downloader.createDownload(_this3.downLoadLinkUrl, {}, function (d, status) {
+                  // 下载完成
+                  uni.hideLoading({});
+                  if (status == 200) {
+                    plus.runtime.install(plus.io.convertLocalFileSystemURL(d.filename), {}, {}, function (error) {
+                      uni.showToast({
+                        title: "安装失败",
+                        duration: 1500,
+                        icon: "none"
+                      });
+                    });
+                  } else {
+                    uni.showToast({
+                      title: "更新失败",
+                      duration: 1500,
+                      icon: "none"
+                    });
+                  }
+                });
+                dtask.start();
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   }
 };
