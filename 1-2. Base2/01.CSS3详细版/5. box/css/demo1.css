@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 100px auto;
+  width: 400px;
+  height: 180px;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: flex-end;
+
+  background: linear-gradient(#e3cd23, #dac20bcb);
+}
+
+img {
+  margin: 0 10px;
+  width: 100px;
+  height: 150px;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+p {
+  font-size: 14px;
+}

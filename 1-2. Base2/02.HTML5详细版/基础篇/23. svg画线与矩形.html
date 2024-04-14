@@ -1,0 +1,36 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-09-14 12:53:34
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .line1 {
+        stroke: black;
+        stroke-width: 3px;
+      }
+      .line2 {
+        stroke: red;
+        stroke-width: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      SVG: 矢量图，放大不会失真，适合大面积填充，通常动画较少较简单，标签和css去画
+      Canvas: 适合用于小面积的绘图，适合动画
+     -->
+
+    <svg width="500px" height="300px" style="border: 1px solid">
+      <line x1="100" y1="100" x2="200" y2="100" class="line1" />
+      <line x1="200" y1="100" x2="200" y2="200" class="line2" />
+      <rect x="0" y="0" width="50" height="100" rx="10" ry="10" />
+    </svg>
+  </body>
+</html>

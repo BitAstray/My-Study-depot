@@ -1,0 +1,33 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-09-16 20:31:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // js是单线程的
+      // worker 是多线程的，真多线程
+      // worker不能操作dom，没有window对象，不能读取文件, 可以发AJAX，可以计算
+      console.log("==========");
+      console.log("==========");
+      var a = 10000;
+
+      var worker = new Worker("./worker.js");
+      worker.postMessage({
+        num: a,
+      });
+      worker.onmessage = function (e) {
+        console.log(e.data);
+      };
+      console.log("========");
+      console.log("========");
+    </script>
+  </body>
+</html>

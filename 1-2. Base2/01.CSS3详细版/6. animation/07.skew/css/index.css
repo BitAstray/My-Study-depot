@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  perspective-origin: 300px 300px;
+}
+
+@keyframes skewchange {
+  0% {
+    transform: skew(45deg, 45deg);
+  }
+  50% {
+    transform: skew(0deg, 0deg);
+  }
+  100% {
+    transform: skew(-45deg, -45deg);
+  }
+}
+
+div {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  width: 200px;
+  height: 200px;
+  background: url(https://tse3-mm.cn.bing.net/th/id/OIP-C.EEa3b_OghD8wDKgdeTCIcQHaFC?pid=ImgDet&rs=1);
+  background-size: cover;
+
+  transform-origin: center center;
+
+  /* 伸缩当前元素坐标轴刻度 */
+  animation: skewchange 4s cubic-bezier(0, 0, 1, 1) infinite alternate;
+}

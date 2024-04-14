@@ -1,0 +1,37 @@
+:root {
+  background-color: #eee;
+}
+
+.container {
+  font-size: 0px;
+  margin: 100px auto;
+  width: 600px;
+  line-height: 30px;
+  height: 300px;
+  text-align: center;
+  list-style: none;
+}
+
+.container li {
+  font-size: 16px;
+  display: inline-block;
+  width: 80px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container li:nth-child(2n) {
+  background-color: lightblue;
+}
+
+.container li:nth-child(2n + 1) {
+  background-color: lightcoral;
+}
+
+.container li:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+
+.container li:first-of-type {
+  border-radius: 5px 0 0 5px;
+}

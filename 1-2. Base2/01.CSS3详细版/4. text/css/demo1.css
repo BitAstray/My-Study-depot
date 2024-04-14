@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* div {
+  column-width: 300px;
+  column-gap: 30px;
+  column-rule: 1px solid #000;
+  column-span: all;
+}
+
+p {
+  column-span: all;
+  margin: 10px 0;
+  text-align: center;
+} */
+
+/* 描边效果 */
+/* div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 120px;
+  line-height: 120px;
+  font-size: 100px;
+  color: transparent;
+  transition: all 1s;
+  font-family: simsun;
+  text-align: center;
+
+  -webkit-text-stroke: 2px red;
+} */
+
+div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 120px;
+  line-height: 120px;
+  font-size: 60px;
+  color: #f10;
+  transition: all 1s;
+  text-align: center;
+
+  text-shadow: 0px 0px 5px #f10, 0px 0px 10px #f20, 0px 0px 15px #f30;
+}
+
+div:hover {
+  text-shadow: 15px -15px 5px #f00, 15px 15px 5px #ff0, -15px 15px 5px #f0f,
+    -15px -15px 5px #0ff, 30px -30px 10px #00f, 30px 30px 10px #f00,
+    -30px 30px 10px #0ff, -30px -30px 10px #ff0, 50px -50px 10px #f0f,
+    50px 50px 10px #ff0, -50px 50px 10px #00f, -50px -50px 10px #f00;
+}
+
+/* div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 100px;
+  font-size: 80px;
+  color: #ddd;
+  transition: all 0.5s;
+  text-align: center;
+
+  text-shadow: 0px 0px 10px #0f0, 0px 0px 20px #0f0, 0px 0px 30px #0f0;
+}
+
+div:hover {
+  text-shadow: 0px 0px 10px #f00, 0px 0px 20px #f10, 0px 0px 30px #f20;
+}
+
+div::before {
+  content: "NO ";
+  opacity: 0;
+  transition: all 1s;
+  text-shadow: 0px 0px 10px #f00, 0px 0px 20px #f10, 0px 0px 30px #f20,
+    0px -5px 20px #f10, 0px -10px 20px #f20, 0px -15px 30px #f10,
+    0px -20px 40px #f20;
+}
+
+div:hover::before {
+  opacity: 1;
+} */
+
+/* 浮雕 */
+/* div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 100px;
+  font-size: 80px;
+  color: #ddd;
+
+  text-shadow: 1px 1px #000, -1px -1px #fff;
+} */
+
+/* 镂刻 */
+/* div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 100px;
+  font-size: 80px;
+  color: #ddd;
+
+  text-shadow: -1px -1px #000;
+} */

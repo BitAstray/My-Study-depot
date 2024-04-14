@@ -1,0 +1,41 @@
+:root,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#red,
+#green,
+#gray {
+  width: 100%;
+  height: 100%;
+}
+
+div[id]:not(:target) {
+  display: none;
+}
+
+#red {
+  background-color: red;
+}
+#green {
+  background-color: green;
+}
+#gray {
+  background-color: gray;
+}
+
+div.button-wrapper {
+  position: absolute;
+  width: 600px;
+  top: 400px;
+}
+
+div.button-wrapper a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #fcc;
+  font-size: 30px;
+  border-radius: 5px;
+  margin: 0 10px;
+}

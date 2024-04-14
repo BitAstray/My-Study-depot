@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .main {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #abcdef;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="search" /><button onclick="search()">搜索</button>
+    <div class="main"></div>
+
+    <script>
+      // A -> B -> C
+      // 为了网页性能，单页面操作
+
+      var data = [
+        {
+          name: "HTML",
+        },
+        {
+          name: "CSS",
+        },
+        {
+          name: "JavaScript",
+        },
+        {
+          name: "Vue",
+        },
+        {
+          name: "React",
+        },
+      ];
+      function search() {
+        var value = document.querySelector("#search").value;
+        var result = data.filter(function (obj) {
+          if (obj.name.indexOf(value) > -1) {
+            return obj;
+          }
+        });
+        render(result);
+        history.pushState({ inpVal: value }, null, "?value=" + value);
+      }
+
+      function render(renderData) {
+        var html = "";
+        renderData.forEach(function (item) {
+          html += `<li>${item.name}</li>`;
+        });
+        document.querySelector(".main").innerHTML = html;
+      }
+
+      window.addEventListener("popstate", function (e) {
+        var value = e.state.inpVal ? e.state.inpVal : "";
+        document.querySelector("#search").value = value;
+        var result = data.filter(function (obj) {
+          if (obj.name.indexOf(value) > -1) {
+            return obj;
+          }
+        });
+        render(result);
+      });
+
+      window.addEventListener("hashchange", function (e) {
+        console.log(e);
+      });
+
+      var url = new URL(location.href);
+      var value = url.searchParams.get("value");
+      if (value) {
+        search();
+      }
+
+      render(data);
+    </script>
+  </body>
+</html>

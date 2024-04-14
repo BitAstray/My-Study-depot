@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .main {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #abcdef;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main"></div>
+
+    <script>
+      // cookie: 每次请求的时候都有可能传送许多无用的信息到后端
+
+      // localStorage: 存储在本地，不发送到服务器
+      // 长期存放在浏览器
+      localStorage.name = "panda";
+      localStorage.arr = JSON.stringify([1, 2, 3]);
+      console.log(JSON.parse(localStorage.arr));
+
+      // 本次会话临时存储的信息，关闭窗口时自动清空
+      sessionStorage.anme = "panda";
+
+      // localStorage 和 cookie
+      // 1. localStorage 存储在本地，不发送到服务器， cookie会把数据发出去
+      // 2. cookie存储内容较少
+    </script>
+  </body>
+</html>

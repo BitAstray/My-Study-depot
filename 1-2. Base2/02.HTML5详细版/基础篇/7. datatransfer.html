@@ -1,0 +1,83 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-09-13 14:45:27
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .a {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #abcdef;
+      }
+      .target {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        left: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a" draggable="true"></div>
+    <div class="target" draggable="true"></div>
+    <!-- 
+      拖拽的生命周期
+      1. 拖拽开始
+      2. 拖拽进行中
+      3. 拖拽结束
+      拖拽的组成：
+      1. 被拖拽的物体
+      2. 目标区域
+
+      所有的标签元素，当拖拽周期结束时，默认事件是回到原处
+      事件是由行为出发的
+      但是一个行为不止可以触发一个事件
+     -->
+    <script>
+      var oDragDiv = document.querySelector(".a");
+      oDragDiv.ondragstart = function (e) {
+        e.dataTransfer.effectAllowed = "link"; //link copy move
+        console.log("拖拽开始");
+      };
+      oDragDiv.ondrop = function (e) {
+        console.log("拖拽中");
+      };
+      oDragDiv.ondragend = function (e) {
+        console.log("拖拽结束");
+      };
+
+      var oDragTarget = document.querySelector(".target");
+      oDragTarget.ondragenter = function (e) {
+        // 不是元素图形进入触发，而是拖拽的鼠标进入才触发
+        console.log("拖拽的鼠标进入");
+      };
+
+      oDragTarget.ondragover = function (e) {
+        e.preventDefault();
+        console.log("拖拽的鼠标进入之后移动");
+      };
+
+      oDragTarget.ondragleave = function (e) {
+        console.log("拖拽的鼠标离开");
+      };
+
+      oDragTarget.ondrop = function (e) {
+        e.dataTransfer.dropEffect = "link";
+        console.log("拖拽的鼠标进入之后松开鼠标");
+      };
+    </script>
+  </body>
+</html>

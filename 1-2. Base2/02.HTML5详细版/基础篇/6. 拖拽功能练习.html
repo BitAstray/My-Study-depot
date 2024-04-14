@@ -1,0 +1,86 @@
+<!--
+ * @Author: Astray
+ * @Date: 2023-09-13 15:44:13
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        position: absolute;
+        width: 150px;
+        height: auto;
+        border: 1px solid;
+        padding-bottom: 10px;
+      }
+
+      .target {
+        position: absolute;
+        left: 300px;
+        width: 150px;
+        height: auto;
+        border: 1px solid;
+        padding-bottom: 10px;
+      }
+
+      li {
+        position: relative;
+        width: 100px;
+        height: 30px;
+        background-color: #abcdef;
+        margin: 10px auto 0px auto;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="target"></div>
+
+    <script>
+      var liList = document.querySelectorAll("li");
+      var dragDom;
+      for (var i = 0; i < liList.length; i++) {
+        liList[i].setAttribute("draggable", true);
+        liList[i].ondragstart = function (e) {
+          dragDom = this;
+        };
+      }
+
+      var target = document.querySelector(".target");
+      target.ondragover = function (e) {
+        e.preventDefault();
+      };
+      target.ondrop = function (e) {
+        this.appendChild(dragDom);
+        dragDom = null;
+      };
+
+      var box = document.querySelector(".box");
+
+      box.ondragover = function (e) {
+        e.preventDefault();
+      };
+      box.ondrop = function (e) {
+        this.appendChild(dragDom);
+        dragDom = null;
+      };
+    </script>
+  </body>
+</html>

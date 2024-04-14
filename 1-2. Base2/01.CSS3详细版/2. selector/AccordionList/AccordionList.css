@@ -1,0 +1,30 @@
+.container {
+  width: 500px;
+  margin: 200px auto;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  background-color: lightblue;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  color: #000;
+  border-radius: 5px;
+  margin-bottom: 1px;
+}
+
+div[id]:not(:target) {
+  height: 0;
+  transform: scaleY(0);
+  overflow: hidden;
+}
+
+div[id] {
+  transform-origin: center top;
+  transition: 0.5s;
+  transform: scaleY(1);
+}

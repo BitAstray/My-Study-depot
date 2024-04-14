@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  perspective-origin: 300px 300px;
+}
+
+div {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  width: 200px;
+  height: 200px;
+  background: url(https://tse3-mm.cn.bing.net/th/id/OIP-C.EEa3b_OghD8wDKgdeTCIcQHaFC?pid=ImgDet&rs=1);
+  background-size: cover;
+
+  transform-origin: 0 0;
+
+  /* 伸缩当前元素坐标轴刻度 */
+  transform: rotatey(90deg) scaleZ(2) rotateX(40deg);
+}
